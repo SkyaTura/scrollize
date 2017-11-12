@@ -39,4 +39,15 @@ const scrollize = new Scrollize([
             element.style.transform = `scaleX(${value})`;
         },
     },
+    {
+        minScroll: (document.body.scrollHeight * (1/3)),
+        maxScroll: (document.body.scrollHeight * (2/3)),
+        minValue: 255,
+        maxValue: 0,
+        element: $main,
+        method: (value, element) => {
+            const fix = Math.floor(value);
+            element.style.color = `rgb(255, ${fix}, ${fix})`;
+        },
+    },
 ]);
